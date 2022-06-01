@@ -252,36 +252,33 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     ]
     const listMessage = {
       text: `
-❏ *U S E R   I N F O*
+ *U S E R   I N F O*
 • Nama    : *${name}*
 • Number  : *${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}*
 • Limit   : *${limit}*
 • Status  : *${global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) ? 'Owner 🗿' : 'Users ⚔️'}*
 • Premium : *${premium ? `${conn.msToDate(premiumTime - new Date() * 1)}` : 'Gratisan'}*
 
-❏ *S T A T U S   I N F O*
+ *S T A T U S   I N F O*
 • Total User : *${rtotalreg} dari ${totalreg}*
 • Tersisa    : *${limit} Limit*
 • Role       : *${role}*
 • Level      : *${level}*
 
-❏ 𝙏𝙄𝙈𝙀
+  *TIME*
 » Wib : *${time}*
 » Tanggal : *${week} ${weton} ${date}*
 
-❏ 𝙏𝘼𝙃𝙐𝙉 𝘽𝘼𝙍𝙐
+  *NEW YEAR*
 _*${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik*_
 
-❏ 𝙍𝘼𝙈𝘼𝘿𝘼𝙉
+  *RAMADAN*
 _*${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik*_
-
-❏ 𝙐𝙇𝘼𝙉𝙂 𝙏𝘼𝙃𝙐𝙉 𝙊𝙒𝙉𝙀𝙍
-_*${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik*_
 
 ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       footer: wm,
       title: judul,
-      buttonText: "Klik Disini",
+      buttonText: "CLICK HERE",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
@@ -335,7 +332,7 @@ ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}donasi`, m)
+    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `OWNER`, `${_p}owner`, `DOMASI`, `${_p}donasi`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
