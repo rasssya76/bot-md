@@ -35,7 +35,7 @@ global.APIKeys = { // APIKey Here
 }
 
 global.WM = 'R - B O T'
-global.linkgc = 'https://chat.whatsapp.com/CnQV9lNcHuIENb8SQ9CaYP'
+global.linkgc = 'https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI'
 global.linkig = 'https://www.instagram.com/the.sad.boy01'
 global.deslink = ''
 global.titlink = 'SUBSCRIBE YT RAMAGANS'
