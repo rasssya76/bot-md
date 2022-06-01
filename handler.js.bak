@@ -35,21 +35,21 @@ module.exports = {
         global.author = global.data.owner
         //global.author = 'The.sad.boy01'
         global.wm2 = global.data.namabot + ' ' + global.data.owner
-        global.wm = namabot + ' ву Rama'
-        global.colong1 = 'Cis'
-        global.colong2 = 'ʙy rama'
+        global.wm = namabot + ' ву 𝚃𝚑𝚎.𝚂𝚊𝚍.𝙱𝚘𝚢𝟶𝟷'
+        global.colong1 = 'Ciss 📸'
+        global.colong2 = 'ʙy 𝚃𝚑𝚎.𝚂𝚊𝚍.𝙱𝚘𝚢𝟶𝟷'
         global.kontak2 = [
-        ['6281515589573', '🚬', 'DEV BOT', 'kly3@gmail.com', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true]
+        ['6281515589573', '𝚃𝚑𝚎.𝚂𝚊𝚍.𝙱𝚘𝚢𝟶𝟷', 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'drakblue3@gmail.com', true],
+        ['6282140373458', 'Raxcel-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6285691387625', 'Evil-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true]
         ]
         global.bg = await (await fetch(img)).buffer()
         global.time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
@@ -739,8 +739,8 @@ global.dfail = async (type, m, conn) => {
     let desl = deslink
     let gc = global.linkgc
     let msg = {
-        rowner: 'Perintah ini hanya dapat digunakan oleh Owner',
-        owner: 'Perintah ini hanya dapat digunakan oleh Owner',
+        rowner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
+        owner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
         mods: 'Perintah ini hanya dapat digunakan oleh *Moderator*',
         premium: 'Perintah ini hanya untuk member _*Premium*_ !',
         group: 'Perintah ini hanya dapat digunakan di grup!',
@@ -807,7 +807,7 @@ function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
 
-global.thumb = 'https://telegra.ph/file/b1ffea059d8b754f8e1f2.jpg'
+global.thumb = 'https://telegra.ph/file/61f2d6d9694b49a2ce7aa.jpg'
 
 global.flaaa = [
  'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
