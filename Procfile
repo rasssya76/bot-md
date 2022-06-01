@@ -1,1 +1,1 @@
-web: node . --server
+worker: npm i emoji-api && npm start
