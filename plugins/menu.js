@@ -7,31 +7,28 @@ let jimp = require('jimp')
 let PhoneNumber = require('awesome-phonenumber')
 const defaultMenu = {
   before: `
-┌─〔 %me 〕
-├ *${ucapan()} %name*
-│
-├ Tersisa *%limit Limit*
-├ Role *%role*
-├ Level *%level (%exp / %maxexp)* [%xp4levelup]
-├ %totalexp XP secara Total
-│
-├ Tanggal: *%week %weton, %date*
-├ Tanggal Islam: *%dateIslamic*
-├ Waktu: *%time*
-│
-├ Uptime: *%uptime (%muptime)*
-├ Database: %rtotalreg dari %totalreg
-├ Github:
-├ %github
-│
-├ Note :
-├ *Ⓟ* = Premium
-├ *Ⓛ* = Limit
-└────
+» *${ucapan()} %name*
+
+» Tersisa *%limit Limit*
+» Role *%role*
+» Level *%level (%exp / %maxexp)* [%xp4levelup]
+» %totalexp XP secara Total
+
+» Tanggal: *%week %weton, %date*
+» Tanggal Islam: *%dateIslamic*
+» Waktu: *%time*
+
+» Uptime: *%uptime (%muptime)*
+» Database: %rtotalreg dari %totalreg
+
+» Note :
+» *Ⓟ* = Premium
+» *Ⓛ* = Limit
+
 %readmore`.trim(),
-  header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└────\n',
+  header: '*%category*',
+  body: '» %cmd %islimit %isPremium',
+  footer: '\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -332,7 +329,7 @@ ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `OWNER`, `${_p}owner`, `DOMASI`, `${_p}donasi`, m)
+    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `OWNER`, `${_p}owner`, `DONASI`, `${_p}donasi`, `BACK`, `${_p}menu}`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
