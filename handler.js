@@ -658,7 +658,7 @@ module.exports = {
                                 namegb: await this.getName(id),
                                 member: groupMetadata.participants.length
                             })
-                            await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fkontak,{
+                            await conn.sendButtonDoc(id, text, wm, action == 'add' ? `HAI` : `BYE\n\nJANGAN BALIK LAGI DASAR ANAK HARAM`, action === 'add' ? '.intro' : 'the.sad.boy01', fkontak,{
   contextInfo: { externalAdReply :{
     mediaUrl: linkig,
     mediaType: 2,
