@@ -277,23 +277,22 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     default:
       if (!/[01]/.test(command)) throw `
-┌〔 Daftar Opsi 〕
-│ ${isOwner ? '\n├ tag\n├ anon\n├ antispam\n├ antivirtex\n├ backup\n├ clear\n├ autoread\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ clear\n├ mycontact\n├ ephe' : ''}
-├ autoclosegroup
-├ antiviewonce
-├ antilink
-├ antitroli
-├ antibuggc
-├ autolevelup
-├ antibadword
-├ delete
-├ detect
-├ document
-├ stiker
-├ simi
-├ welcome
-│ 
-└────
+   *Daftar Opsi*
+ ${isOwner ? '\n *->* tag\n *->* anon\n *->* antispam\n *->* antivirtex\n *->* backup\n *->* clear\n *->* autoread\n *->* grouponly\n *->* jadibot\n *->* nsfw\n *->* public\n *->* clear\n *->* mycontact\n *->* ephe' : ''}
+ *->* autoclosegroup
+ *->* antiviewonce
+ *->* antilink
+ *->* antitroli
+ *->* antibuggc
+ *->* autolevelup
+ *->* antibadword
+ *->* delete
+ *->* detect
+ *->* document
+ *->* stiker
+ *->* simi
+ *->* welcome
+ 
 Contoh:
 ${usedPrefix}on welcome
 ${usedPrefix}off welcome

@@ -7,27 +7,28 @@ let jimp = require('jimp')
 let PhoneNumber = require('awesome-phonenumber')
 const defaultMenu = {
   before: `
-» *${ucapan()} %name*
+ *->* *${ucapan()} %name*
 
-» Tersisa *%limit Limit*
-» Role *%role*
-» Level *%level (%exp / %maxexp)* [%xp4levelup]
-» %totalexp XP secara Total
+ *->* Tersisa *%limit Limit*
+ *->* Role *%role*
+ *->* Level *%level (%exp / %maxexp)* [%xp4levelup]
+ *->* %totalexp XP secara Total
 
-» Tanggal: *%week %weton, %date*
-» Tanggal Islam: *%dateIslamic*
-» Waktu: *%time*
+ *->* Tanggal: *%week %weton, %date*
+ *->* Tanggal Islam: *%dateIslamic*
+ *->* Waktu: *%time*
 
-» Uptime: *%uptime (%muptime)*
-» Database: %rtotalreg dari %totalreg
+ *->* Uptime: *%uptime (%muptime)*
+ *->* Database: %rtotalreg dari %totalreg
+ *->* Github:
+ *->* %github
 
-» Note :
-» *Ⓟ* = Premium
-» *Ⓛ* = Limit
-
+ *->* Note :
+ *->* *Ⓟ* = Premium
+ *->* *Ⓛ* = Limit
 %readmore`.trim(),
-  header: '*%category*',
-  body: '» %cmd %islimit %isPremium',
+  header: '____[*%category*]____',
+  body: ' *->* %cmd %islimit %isPremium',
   footer: '\n',
   after: `
 *%npmname@^%version*
@@ -182,7 +183,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     const jamm = Math.floor( lebih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
     const menitt = Math.floor( lebih % (1000 * 60 * 60) / (1000 * 60))
     const detikk = Math.floor( lebih % (1000 * 60) / 1000)
-    const ultah = new Date('August 19, 2022 23:59:59')
+    const ultah = new Date('August 18, 2022 23:59:59')
     const sekarat = new Date().getTime() 
     const Kurang = ultah - sekarat
     const ohari = Math.floor( Kurang / (1000 * 60 * 60 * 24));
@@ -249,33 +250,32 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     ]
     const listMessage = {
       text: `
- *U S E R   I N F O*
-• Nama    : *${name}*
-• Number  : *${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}*
-• Limit   : *${limit}*
-• Status  : *${global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) ? 'Owner 🗿' : 'Users ⚔️'}*
-• Premium : *${premium ? `${conn.msToDate(premiumTime - new Date() * 1)}` : 'Gratisan'}*
+☢︎︎ *U S E R   I N F O*
+ Nama    : *${name}*
+ Limit   : *${limit}*
+ Status  : *${global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) ? 'Owner 🗿' : 'Users ⚔️'}*
+ Premium : *${premium ? `${conn.msToDate(premiumTime - new Date() * 1)}` : 'Gratisan'}*
 
- *S T A T U S   I N F O*
-• Total User : *${rtotalreg} dari ${totalreg}*
-• Tersisa    : *${limit} Limit*
-• Role       : *${role}*
-• Level      : *${level}*
+☢︎︎ *S T A T U S   I N F O*
+ Total User : *${rtotalreg} dari ${totalreg}*
+ Tersisa    : *${limit} Limit*
+ Role       : *${role}*
+ Level      : *${level}*
 
-  *TIME*
+☢︎︎ 𝙏𝙄𝙈𝙀
 » Wib : *${time}*
 » Tanggal : *${week} ${weton} ${date}*
 
-  *NEW YEAR*
+☢︎︎ 𝙏𝘼𝙃𝙐𝙉 𝘽𝘼𝙍𝙐
 _*${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik*_
 
-  *RAMADAN*
+☢︎︎ 𝙍𝘼𝙈𝘼𝘿𝘼𝙉
 _*${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik*_
 
 ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       footer: wm,
       title: judul,
-      buttonText: "CLICK HERE",
+      buttonText: "Klik Disini",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
@@ -329,7 +329,7 @@ ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `OWNER`, `${_p}owner`, `DONASI`, `${_p}donasi`, `BACK`, `${_p}menu}`, m)
+    await conn.send3TemplateButtonImg(m.chat, await genProfile(conn, m), text.trim(), wm, `OWNER`, `${_p}owner`, `DONASI`, `${_p}donasi`, `BACK`, `${_p}menu`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -377,4 +377,27 @@ function ucapan() {
     res = "Selamat malam"
   }
   return res
+}
+
+//By fahri adison = https://github.com/FahriAdison
+
+ async function genProfile(conn, m) {
+  let font = await jimp.loadFont('./name.fnt'),
+    mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
+    welcome = await jimp.read(thumbnailUrl.getRandom()),
+    avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
+    status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected'
+
+    await avatar.resize(460, 460)
+    await mask.resize(460, 460)
+    await avatar.mask(mask)
+    await welcome.resize(welcome.getWidth(), welcome.getHeight())
+
+    await welcome.print(font, 550, 180, 'Name:')
+    await welcome.print(font, 650, 255, m.pushName.slice(0, 25))
+    await welcome.print(font, 550, 340, 'About:')
+    await welcome.print(font, 650, 415, status)
+    await welcome.print(font, 550, 500, 'Number:')
+    await welcome.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
+    return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png')
 }
