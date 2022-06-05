@@ -39,8 +39,8 @@ module.exports = {
         global.colong1 = 'Ciss 📸'
         global.colong2 = 'ʙy RamaGans'
         global.kontak2 = [
-        ['6281515589573', 'RamaGans', 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'rgans3@gmail.com', true],
-        ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6281515589573', 'RamaGans', 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'botR@gmail.com', true],
+        ['62823380980383', 'Raxcel-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
         ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
         ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
         ['62823380980383', 'R-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
