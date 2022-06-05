@@ -27,7 +27,7 @@ const defaultMenu = {
  *->* *Ⓟ* = Premium
  *->* *Ⓛ* = Limit
 %readmore`.trim(),
-  header: '____[*%category*]____',
+  header: '____[ *%category* ]____',
   body: ' *->* %cmd %islimit %isPremium',
   footer: '\n',
   after: `
@@ -330,7 +330,7 @@ ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `OWNER`, `${_p}owner`, `DOMASI`, `${_p}donasi`, m)
+    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `OWNER`, `${_p}owner`, `DONASI`, `${_p}donasi`, `BACK`, `${_p}menu`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
