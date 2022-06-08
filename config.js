@@ -50,7 +50,7 @@ global.urlnya = "https://www.instagram.com/rassya76"
 
 //============= callButtons ============//
 global.dtc = 'OWNER'
-global.phn = '6281515589573'
+global.phn = '6282142108243'
 
 //========== Tampilan Bot =============//
 global.sa = '╭─'
